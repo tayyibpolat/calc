@@ -1,0 +1,43 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 425px;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 75px;
+}
+.item{
+    width: 90px;
+    height: 25px;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: medium;
+    border: rgb(234, 234, 234);
+    background-color: rgb(234, 234, 234);
+}
+.equal{
+    font-size: large;
+    color: white;
+    border: rgb(34, 116, 218);
+    background-color: rgb(34, 116, 218);
+}
+.op{
+    font-size: large;
+    border: rgb(197, 197, 197);
+    background-color: rgb(197, 197, 197);
+}
+.extra{
+    font-size: larger;
+}
+.clear{
+    border: rgb(234, 234, 234);
+    background-color: rgb(234, 234, 234);
+    border-radius: 5px;
+    height: 25px;
+    margin: 5px;
+    width: 402px;
+}
