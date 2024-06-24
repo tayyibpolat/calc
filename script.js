@@ -19,4 +19,7 @@ function operator(a, b, operation){
     if (operation === "*") return multiply(a, b);
     if (operation === "/") return divide(a, b);
 };
-console.log(operator(4,4,"+"));
+let item = document.querySelectorAll(".item");
+item.addEventListener("click", function calc(num){
+    
+})
