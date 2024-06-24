@@ -33,11 +33,22 @@
 .extra{
     font-size: larger;
 }
+.con0{
+    display: flex;
+}
 .clear{
     border: rgb(234, 234, 234);
     background-color: rgb(234, 234, 234);
     border-radius: 5px;
     height: 25px;
+    width: 90px;
     margin: 5px;
-    width: 402px;
+}
+.input{
+    width: 297px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid rgb(209, 206, 206);
+    margin: 5px;
+    text-align: right;
 }
