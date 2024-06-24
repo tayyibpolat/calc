@@ -20,6 +20,3 @@ function operator(a, b, operation){
     if (operation === "/") return divide(a, b);
 };
 let item = document.querySelectorAll(".item");
-item.addEventListener("click", function calc(num){
-    
-})
