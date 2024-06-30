@@ -16,18 +16,25 @@
     border-radius: 5px;
     margin: 5px;
     font-size: medium;
-    border: rgb(234, 234, 234);
+    border: none;    
     background-color: rgb(234, 234, 234);
+    transition: transform 0.2s; /* Smooth transition for transform */
+}
+.item:hover {
+    transform: scale(1.1); /* Make the button larger on hover */
+}
+.item:active {
+    transform: scale(0.9); /* Make the button smaller when clicked */
 }
 .equal{
     font-size: large;
     color: white;
-    border: rgb(34, 116, 218);
+    border: none;;
     background-color: rgb(34, 116, 218);
 }
 .op{
     font-size: large;
-    border: rgb(197, 197, 197);
+    border: none;
     background-color: rgb(197, 197, 197);
 }
 .extra{
@@ -37,7 +44,7 @@
     display: flex;
 }
 .clear{
-    border: rgb(234, 234, 234);
+    border: none;    
     background-color: rgb(234, 234, 234);
     border-radius: 5px;
     height: 25px;
