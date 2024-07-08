@@ -11,7 +11,7 @@ function divide(a, b){
     return a / b;
 };
 
-let firstNum, secNum, mixer;
+let firstNum, secNum, mixer, op1;
 
 function operator(a, b, operation){
     if (operation === "+") return add(a, b);
@@ -21,13 +21,15 @@ function operator(a, b, operation){
 };
 
 const container = document.querySelector(".container");
-
+let button = document.querySelectorAll("button.num")
 const inputField = document.querySelector(".input");
 
 container.addEventListener("click", (event) => {
     if (event.target.classList.contains("num")) {
-        inputField.value += event.target.textContent;
+        firstNum = inputField.value += event.target.textContent;
     } else if (event.target.classList.contains("clear")) {
         inputField.value = "";
+    } else if (event.target.classList.contains("op")) {
+        op1 = event.target.textContent;
     };
 });
