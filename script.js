@@ -21,9 +21,33 @@ function operator(a, b, operation){
 };
 
 const container = document.querySelector(".container");
-const numbers = document.querySelectorAll("button.num")
-const operators = document.querySelectorAll("button.op");
 const inputField = document.querySelector(".input");
+const numbers = document.querySelectorAll(".num");
+const oper = document.querySelectorAll(".op");
+
+let first = false;
+let sec = false;
+
+numbers.forEach(number => {
+    number.addEventListener("click", function(){
+        first = true;
+        check();
+    });
+});
+oper.forEach(operator => {
+    operator.addEventListener("click", function(){
+        sec = true;
+        check();
+    });
+});
+
+function check(){
+    if (first && sec) {
+        alert ("true");
+        first = false;
+        sec = false;
+    };
+};
 
 container.addEventListener("click", (event) => {
     if (event.target.classList.contains("num")) {
