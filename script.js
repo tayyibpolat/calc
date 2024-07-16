@@ -26,29 +26,29 @@ const numbers = document.querySelectorAll(".num");
 const oper = document.querySelectorAll(".op");
 const input = inputField.value;
 
-let first = false;
-let sec = false;
+let numberClick= false;
+let operatorClick= false;
 
 numbers.forEach(number => {
     number.addEventListener("click", function(){
-        first = true;
+        numberClick= true;
         check();
     });
 });
 oper.forEach(operator => {
     operator.addEventListener("click", function(){
-        if (first && input.length >= 0){
-            sec = true;
+        if (numberClick&& input.length >= 0){
+            operatorClick= true;
         };
         check();
     });
 });
 
 function check(){
-    if (first && sec) {
+    if (numberClick&& sec) {
         alert ("true");
-        first = false;
-        sec = false;
+        numberClick= false;
+        operatorClick= false;
     };
 };
 
