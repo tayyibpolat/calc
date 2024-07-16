@@ -24,6 +24,7 @@ const container = document.querySelector(".container");
 const inputField = document.querySelector(".input");
 const numbers = document.querySelectorAll(".num");
 const oper = document.querySelectorAll(".op");
+const input = inputField.value;
 
 let first = false;
 let sec = false;
@@ -36,7 +37,9 @@ numbers.forEach(number => {
 });
 oper.forEach(operator => {
     operator.addEventListener("click", function(){
-        sec = true;
+        if (first && input.length >= 0){
+            sec = true;
+        };
         check();
     });
 });
