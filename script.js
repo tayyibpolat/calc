@@ -32,21 +32,20 @@ let operatorClick= false;
 numbers.forEach(number => {
     number.addEventListener("click", function(){
         numberClick= true;
-        check();
     });
 });
 oper.forEach(operator => {
     operator.addEventListener("click", function(){
-        if (numberClick&& input.length >= 0){
+        if (numberClick && input.length >= 0){
             operatorClick= true;
+            check();
         };
-        check();
     });
 });
 
 function check(){
-    if (numberClick&& sec) {
-        alert ("true");
+    if (numberClick && operatorClick) {
+        alert(firstNum);
         numberClick= false;
         operatorClick= false;
     };
