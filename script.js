@@ -57,7 +57,6 @@ container.addEventListener("click", (event) => {
 
 function check(){
     if (numberClick && operatorClick) {
-        let secNum = firstNum;
         alert(operatorClicked);
         numberClick= false;
         operatorClick= false;
