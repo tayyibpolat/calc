@@ -20,9 +20,7 @@
     background-color: rgb(234, 234, 234);
     transition: transform 0.2s; /* Smooth transition for transform */
 }
-.item:hover {
-    transform: scale(1.1); /* Make the button larger on hover */
-}
+
 .item:active {
     transform: scale(0.9); /* Make the button smaller when clicked */
 }
