@@ -24,6 +24,7 @@ const container = document.querySelector(".container");
 const inputField = document.querySelector(".input");
 const numbers = document.querySelectorAll(".num");
 const oper = document.querySelectorAll(".op");
+const equal = document.querySelector(".equal"); 
 
 let numberClick= false;
 let operatorClick= false;
@@ -44,11 +45,11 @@ oper.forEach(operator => {
 
 container.addEventListener("click", (event) => {
     if (event.target.classList.contains("num")) {
-        if (inputField.value === "0")
+        if (inputField.value === "0"){
           inputField.value = event.target.textContent;
-        else{
-            inputField.value += event.target.textContent;
-        }
+    } else {
+        inputField.value += event.target.textContent;
+      }
     } else if (event.target.classList.contains("clear")) {
         inputField.value = "0";
     } else if (event.target.classList.contains("op")) {
