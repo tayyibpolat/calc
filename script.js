@@ -24,8 +24,6 @@ const container = document.querySelector(".container");
 const inputField = document.querySelector(".input");
 const numbers = document.querySelectorAll(".num");
 const oper = document.querySelectorAll(".op");
-const equal = document.querySelectorAll(".euqal");
-const input = inputField.value;
 
 let numberClick= false;
 let operatorClick= false;
@@ -37,7 +35,7 @@ numbers.forEach(number => {
 });
 oper.forEach(operator => {
     operator.addEventListener("click", function(){
-        if (numberClick && input.length >= 0){
+        if (numberClick){
             operatorClick= true;
             check();
         };
@@ -46,10 +44,13 @@ oper.forEach(operator => {
 
 container.addEventListener("click", (event) => {
     if (event.target.classList.contains("num")) {
-        inputField.value += event.target.textContent;
-        firstNum = inputField.value;
+        if (inputField.value === "0")
+          inputField.value = event.target.textContent;
+        else{
+            inputField.value += event.target.textContent;
+        }
     } else if (event.target.classList.contains("clear")) {
-        inputField.value = "";
+        inputField.value = "0";
     } else if (event.target.classList.contains("op")) {
         operatorClicked = event.target.textContent;
     };
@@ -57,8 +58,9 @@ container.addEventListener("click", (event) => {
 
 function check(){
     if (numberClick && operatorClick) {
-        alert(operatorClicked);
-        numberClick= false;
-        operatorClick= false;
+        firstNum = inputField.value;
+        alert (firstNum);
+        numberClick = false;
+        operatorClick = false;
     };
 };
