@@ -44,12 +44,12 @@ oper.forEach(operator => {
 });
 
 container.addEventListener("click", (event) => {
-    if (event.target.classList.contains("num")) {
+    if (event.target.classList.contains("num")){
         if (inputField.value === "0"){
-          inputField.value = event.target.textContent;
-    } else {
-        inputField.value += event.target.textContent;
-      }
+            inputField.value = event.target.textContent;
+        } else {
+            inputField.value += event.target.textContent;
+        }
     } else if (event.target.classList.contains("clear")) {
         inputField.value = "0";
     } else if (event.target.classList.contains("op")) {
