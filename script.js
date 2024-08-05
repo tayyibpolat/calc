@@ -23,7 +23,7 @@ function operator(a, b, operation){
 const container = document.querySelector(".container");
 const inputField = document.querySelector(".input");
 const numbers = document.querySelectorAll(".num");
-const oper = document.querySelectorAll(".op");
+const operators = document.querySelectorAll(".op");
 const equal = document.querySelector(".equal");
 
 let numberClick = false;
@@ -35,12 +35,18 @@ numbers.forEach(number => {
     });
 });
 
-oper.forEach(operator => {
+operators.forEach(operator => {
     operator.addEventListener("click", function() {
         if (numberClick) {
             operatorClick = true;
-            check();
-        }
+            if (numberClick && operatorClick) {
+                if (firstNum === null) {
+                    firstNum = inputField.value;
+                };
+                numberClick = false;
+                operatorClick = false;
+            };
+        };
     });
 });
 
@@ -65,9 +71,6 @@ container.addEventListener("click", (event) => {
         inputField.value = "0";
         firstNum = secNum = operatorClicked = null;
     } else if (event.target.classList.contains("op")) {
-        if (firstNum === null) {
-            firstNum = inputField.value;
-        }
         operatorClicked = event.target.textContent;
     } else if (event.target.classList.contains("equal")) {
         if (firstNum !== null && secNum !== null && operatorClicked !== null) {
@@ -77,13 +80,3 @@ container.addEventListener("click", (event) => {
         }
     }
 });
-
-function check() {
-    if (numberClick && operatorClick) {
-        if (firstNum === null) {
-            firstNum = inputField.value;
-        }
-        numberClick = false;
-        operatorClick = false;
-    }
-}
