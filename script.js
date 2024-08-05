@@ -67,6 +67,12 @@ container.addEventListener("click", (event) => {
                 secNum = inputField.value;
             }
         }
+    } else if (event.target.classList.contains("extra")){
+        if (inputField.value.includes(".")){
+            return;
+        } else {
+            inputField.value += event.target.textContent;
+        }
     } else if (event.target.classList.contains("clear")) {
         inputField.value = "0";
         firstNum = secNum = operatorClicked = null;
